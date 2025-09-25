@@ -1,0 +1,223 @@
+<!-- Assignment - 10 – COSC 2328 – Professor McCurry -->
+<!-- Implemented by - Andres Serna -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>   
+        <title>Assignment 10</title>
+        <link rel="stylesheet" href="css/asg10-css.css">
+        <script src="js/asg10-js.js"> </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="cart_panel">
+            <div id="cart_header">
+                <h2>Your Cart</h2>
+                <button id="close_cart">&times;</button>
+            </div>
+            
+            <ul id="cart_items">
+                <!-- Cart items will be inserted here dynamically -->
+                <li class="empty-cart">Your cart is empty</li>
+            </ul>
+            
+            <div id="cart_footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span>$<span id="cart_total">0.00</span></span>
+                </div>
+                <button id="checkout_btn" type="button">Checkout</button>
+            </div>
+        </div>
+        <div class="header">
+            
+        </div>
+        <h1> Tacos by Derz </h1>
+        
+        </div>
+        <form id="orderForm" method="POST" action="asg10_php.php">
+            <div class="cart">
+                <button id="cart_btn" type="button">
+                    Cart <span id="cart_badge">0</span>
+                </button>
+            </div>
+            <h2> Deliver my food to... </h2>
+            <!--  cart icon to the right of the screen, which is a button that displays a pop-up of the items in your cart -->
+            
+            <fieldset>
+                <label class="input-labels">Phone</label>
+                <input type="tel" 
+                       id="phone" 
+                       name="phone"
+                       placeholder="123-456-7890"
+                       title="Please enter a valid 10-digit phone number"
+                       required>
+                <div class = "input-labels_after_phone">
+                    <label class="input-labels">Name</label>
+                    <input type="text" id="name" name="name">
+
+                    <label class="input-labels">Address</label>
+                    <input type="text" id="address" name="address">
+
+                    <label class="input-labels">City</label>
+                    <input type="text" id="city" name="city">
+
+                    <label class="input-labels">State</label>
+                    <input type="text" id="state" name="state">
+
+                    <label class="input-labels">Zip</label>
+                    <input type="text" id="zip" name="zip">
+                </div>
+            </fieldset>
+
+            <h2> What would you like to eat? </h2>
+
+            <div class="menu">
+                <!-- For ordering food, the user should choose an item (your menu should have at least 4), 
+                the quantity of item (up to 10 from a dropdown menu) and
+                the price of each item.
+                In addition, they should be able to choose a drink: tea, water, coke, dr. pepper, or orange. (also from a dropdown menu). -->
+
+                <div class="menu-item">
+                    <h3> Taco </h3>
+                    <p> $2.00 </p>
+                    <label for="taco_qty">Quantity:</label>
+                    <select id="taco_qty" name="taco_qty">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <label for="taco_type">Meat:</label>
+                    <select id="taco_type" name="taco_type">
+                        <option value="Al Pastor"> Al Pastor </option>
+                        <option value="Carnitas"> Carnitas </option>
+                        <option value="Barbacoa"> Barbacoa </option>
+                        <option value="Fajita"> Fajita </option>
+                        <option value="Chicharron"> Chicharron </option>
+                        <option value="Lengua"> Lengua </option>
+                    </select>
+                    <div class="menu-item-image">
+                        <img src="images/taco.jpg" alt="Taco" width="200" height="200">
+                    </div>
+
+                    <!-- add to cart button -->
+                    <button id="add_taco_to_cart" type="button">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <h3> Burrito </h3>
+                    <p> $4.00 </p>
+                    <label for="burrito_qty">Quantity:</label>
+                    <select id="burrito_qty" name="burrito_qty">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <label for="burrito_type">Burrito Flavor:</label>
+                    <select id="burrito_type" name="burrito_type">
+                        <option value="beef"> Bombing-Beef </option>
+                        <option value="chicken"> Chicken Delight </option>
+                        <option value="pork"> Pork Perfect </option>
+                        <option value="veggie"> Gosh-Darn Green </option>
+                        <option value="fish"> Fishy Fiesta </option>
+                    </select>
+
+                    <div class="menu-item-image">
+                        <img src="images/burrito.jpg" alt="Burrito" width="200" height="200">
+                    </div>
+
+                    <button id="add_burritto_to_cart" type="button">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <h3> Nachos </h3>
+                    <p> $5.00 </p>
+                    <label for="nachos_qty">Quantity:</label>
+                    <select id="nachos_qty" name="nachos_qty">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+
+                    <label>Add Ons:</label>
+                    <div class="checkbox-group">
+
+                        <input type="checkbox" id="guacamole" name="nacho_add_ons" value="guacamole">
+                        <label for="guacamole">Guacamole</label><br>
+
+                        <input type="checkbox" id="sour_cream" name="nacho_add_ons" value="sour_cream">
+                        <label for="sour_cream">Sour Cream</label><br>
+
+                        <input type="checkbox" id="jalapenos" name="nacho_add_ons" value="jalapenos">
+                        <label for="jalapenos">Jalapenos</label><br>
+
+                        <input type="checkbox" id="salsa" name="nacho_add_ons" value="salsa">
+                        <label for="salsa">Salsa</label><br>
+
+                        <input type="checkbox" id="beans" name="nacho_add_ons" value="beans">
+                        <label for="beans">Beans</label><br>
+
+                        <input type="checkbox" id="chicken" name="nacho_add_ons" value="chicken">
+                        <label for="chicken">Chicken</label><br>
+
+                        <input type="checkbox" id="steak" name="nacho_add_ons" value="steak">
+                        <label for="steak">Steak</label><br>
+                    </div>            
+                    
+                    <div class="menu-item-image">
+                        <img src="images/nachos.jpg" alt="Nachos" width="200" height="200">
+                    </div>
+
+                    <button id="add_nachos_to_cart" type="button">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <h3> Drink </h3>
+                    <p> $1.00 </p>
+                    <label for="drink">Choose a drink:</label>
+                    <select id="drink" name="drink">
+                        <option value="tea">Tea</option>
+                        <option value="water">Water</option>
+                        <option value="coke">Coke</option>
+                        <option value="dr_pepper">Dr. Pepper</option>
+                        <option value="orange">Orange</option>
+                    </select>
+
+                    <div class="menu-item-image">
+                        <img src="images/drink.jpg" alt="Drink" width="200" height="200">
+                    </div>
+
+                    <button id="add_drink_to_cart" type="button">Add to Cart</button>
+                </div>
+            </div>
+
+            <br> <br>
+            <button id="clear_btn" type="button">Clear Form</button>
+            <button id="submit_btn" type="submit">Place Order</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,415 @@
+/*******************************
+ * Font Imports & Global Styles
+ *******************************/
+.inter-myFont {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.fugaz-one-regular {
+    font-family: "Fugaz One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: "Fugaz One", Arial, sans-serif;
+    background: linear-gradient(180deg, #b2d8d8 0%, #f5deb3 100%);
+    margin: 0;
+    padding: 0;
+}
+
+/*******************************
+ * Header Styles
+ *******************************/
+ .header {
+    text-align: center;
+    background-image: url('../images/banner-pattern.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 200px;
+    padding: 40px 0;
+    margin: 0;
+ }
+
+.header, h1, h3 {
+    text-align: center;
+    color: #333;
+    margin: 0;
+    padding: 0 20px;
+}
+h1 {
+    font-size: xx-large;
+}
+h2 {
+    padding-top: 20px;
+    color: #333;
+}
+
+/*******************************
+ * Form & Input Styles
+ *******************************/
+
+form {
+    padding: 20px;
+}
+
+fieldset {
+    border: none;
+    margin: 20px 0;
+    display: flex;
+    gap: 15px;
+}
+
+.input-labels {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+fieldset select, 
+fieldset input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    flex: 1;
+    min-width: 150px;
+}
+
+/*******************************
+ * Menu Container Styles
+ *******************************/
+.menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.menu-item {
+    border: 3px solid #e63946;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: white;
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*******************************
+ * Menu Item Form Elements
+ *******************************/
+.menu-item label {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.menu-item label:not(:first-of-type) {
+    margin-left: 15px;
+}
+
+.menu-item select {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    margin-right: 20px;
+    padding: 5px;
+    border-radius: 4px;
+    min-width: unset;
+}
+
+/*******************************
+ * Menu Item Images
+ *******************************/
+.menu-item-image {
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: 60px;
+}
+
+.menu-item img {
+    width: 200px;
+    display: block;
+    border: 2px solid #0bc6ec;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    transform: rotate(-2deg);
+}
+
+/*******************************
+ * Button Styles
+ *******************************/
+button {
+    font-family: "Fugaz One", Arial, sans-serif;
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #264653;
+}
+
+.menu-item button#add_to_cart {
+    font-size: medium;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 200px;
+    padding: 12px 20px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu-item button#add_to_cart:hover {
+    background-color: #cc3342;
+}
+
+#cart_btn {
+    background-color: #e63946;
+    /* <!-- set the cart button to the left of the screen --> */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border: none;
+
+
+}
+
+#submit_btn {
+    display: block;
+    margin: 30px auto;
+    padding: 15px 30px;
+    font-size: 1.2em;
+}
+
+/*******************************
+ * Responsive Design
+ *******************************/
+@media (min-width: 768px) {
+    .menu-item {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (min-width: 1200px) {
+    .menu-item {
+        width: calc(25% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    fieldset {
+        flex-direction: column;
+    }
+
+    .menu {
+        grid-template-columns: 1fr;
+    }
+
+    .checkbox-group {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/********************
+ * Cart Panel Styles
+ ********************/
+ .cart {
+    position: relative;
+}
+
+#cart_btn {
+    background-color: #e63946;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border: none;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#cart_badge {
+    display: none;
+    background-color: #264653;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#cart_panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 350px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#cart_panel.open {
+    right: 0;
+}
+
+#cart_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f1f1f1;
+}
+
+#cart_header h2 {
+    margin: 0;
+    color: #e63946;
+}
+
+#close_cart {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cart_items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+#cart_items li {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-details h4 {
+    margin: 0 0 5px 0;
+    color: #264653;
+}
+
+.cart-item-details p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    font-family: "Inter", sans-serif;
+}
+
+.remove-item-btn {
+    background: none;
+    border: none;
+    color: #e63946;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+#cart_footer {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 2px solid #f1f1f1;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.cart-total span:last-child {
+    font-size: 18px;
+    color: #264653;
+}
+
+#checkout_btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#checkout_btn:hover {
+    background-color: #264653;
+}
+
+.empty-cart {
+    text-align: center;
+    color: #999;
+    padding: 30px 0;
+    font-style: italic;
+}
+
+/* Notification Styles */
+.notification {
+    position: fixed;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2a9d8f;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    z-index: 1001;
+    transition: bottom 0.3s ease;
+}
+
+.notification.show {
+    bottom: 20px;
+}
