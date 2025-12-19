@@ -38,10 +38,9 @@
   - Detailed order summary display
 
 - **User Experience**
-  - Toast notifications for cart actions
   - Form clearing functionality
   - Responsive design for various screen sizes
-  - Polaroid-style photo presentation for menu items
+  - Trendy Polaroid-style photo presentation for menu items
 
 
 ## Screenshots
