@@ -38,10 +38,9 @@
   - Detailed order summary display
 
 - **User Experience**
-  - Toast notifications for cart actions
   - Form clearing functionality
   - Responsive design for various screen sizes
-  - Polaroid-style photo presentation for menu items
+  - Trendy Polaroid-style photo presentation for menu items
 
 
 ## Screenshots
@@ -51,7 +50,10 @@
   <img src="screenshots/food_item_.png" width="200">
   <img src="screenshots/cart.png" width="200">
 </p>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6071779133336647953565bd871c73ddf444028a
 
 ## How to Run
 
