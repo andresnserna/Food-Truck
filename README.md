@@ -50,10 +50,6 @@
   <img src="screenshots/food_item.png" width="200">
   <img src="screenshots/cart.png" width="200">
 </p>
-<<<<<<< HEAD
-
-=======
->>>>>>> 6071779133336647953565bd871c73ddf444028a
 
 ## How to Run
 
