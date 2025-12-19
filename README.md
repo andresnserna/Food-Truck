@@ -47,7 +47,7 @@
 
 <p align="center">
   <img src="screenshots/top_of_page.png" width="200">
-  <img src="screenshots/food_item_.png" width="200">
+  <img src="screenshots/food_item.png" width="200">
   <img src="screenshots/cart.png" width="200">
 </p>
 <<<<<<< HEAD
